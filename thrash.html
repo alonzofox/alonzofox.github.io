@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<head>
+    <style>
+        #box {
+            background-color: green;
+            resize: horizontal;
+            overflow: hidden;
+            height: 100px;
+            width: 300px;
+        }
+
+        p:not(#box) {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <p id="box"></p>
+    <button id="slow">Slow Way</button>
+    <button id="fast">Fast Way</button>
+    <div id="items"></div>
+    <script>
+        var items = [];
+
+        // create 1000 dummy paragraphs
+        var div = document.getElementById("items");
+        for (var i = 0; i < 1000; i++) {
+            var p = document.createElement("p");
+            p.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis turpis vel lectus venenatis rutrum.";
+            div.appendChild(p);
+            items.push(p);
+        }
+
+        var box = document.getElementById("box");
+
+        // resize paragraphs (the slow way)
+        function slow() {
+            for (var i = 0, len = items.length; i < len; i++) {
+                items[i].style.width = box.offsetWidth + "px";
+            }
+        }
+
+        // resize paragraphs (the fast way)
+        function fast() {
+            var boxWidth = box.offsetWidth;
+            for (var i = 0, len = items.length; i < len; i++) {
+                items[i].style.width = boxWidth + "px";
+            }
+        }
+
+        // handle button clicks
+        document.getElementById("slow").addEventListener("click", slow, false);
+        document.getElementById("fast").addEventListener("click", fast, false);
+
+        // init paragraph's the fast way
+        fast();
+    </script>
+</body>
+</html>
