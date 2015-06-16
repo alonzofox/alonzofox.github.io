@@ -19,10 +19,12 @@ var Rainbox = (function () {
     };
     return Rainbox;
 })();
-var element = document.getElementsByTagName("body")[0];
-var box = new Rainbox(element);
-var hue = 0;
-setInterval(function () {
-    box.render();
-    box.hue = hue++;
-}, 300);
+document.addEventListener("DOMContentLoaded", function (e) {
+    var element = document.getElementsByTagName("body")[0];
+    var box = new Rainbox(element);
+    var hue = 0;
+    setInterval(function () {
+        box.render();
+        box.hue = hue++;
+    }, 300);
+}, false);

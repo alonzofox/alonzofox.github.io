@@ -20,13 +20,17 @@
     }
 }
 
-var element = document.getElementsByTagName("body")[0];
-var box = new Rainbox(element);
-var hue = 0;
+document.addEventListener("DOMContentLoaded", e => {
 
-setInterval(() => {
+    var element = document.getElementsByTagName("body")[0];
+    var box = new Rainbox(element);
+    var hue = 0;
 
-    box.render();
-    box.hue = hue++;
+    setInterval(() => {
 
-}, 300);
+        box.render();
+        box.hue = hue++;
+
+    }, 300);
+
+}, false);
