@@ -15,7 +15,7 @@ var Rainbox = (function () {
     });
     Rainbox.prototype.render = function () {
         var color = `hsl(${this._hue}, 50%, 100%)`;
-        this._element.style.backgroundColor = color;
+        this._element.style.color = color;
     };
     return Rainbox;
 })();
