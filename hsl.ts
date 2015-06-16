@@ -20,7 +20,7 @@
     }
 }
 
-var element = document.getElementById("box");
+var element = document.getElementsByTagName("body")[0];
 var box = new Rainbox(element);
 var hue = 0;
 
