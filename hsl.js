@@ -20,7 +20,7 @@ var Rainbox = (function () {
     return Rainbox;
 })();
 document.addEventListener("DOMContentLoaded", function (e) {
-    var element = document.getElementsByTagName("body")[0];
+    var element = document.getElementById("box");
     var box = new Rainbox(element);
     var hue = 0;
     setInterval(function () {
